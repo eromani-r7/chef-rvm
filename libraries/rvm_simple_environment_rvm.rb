@@ -58,7 +58,7 @@ class ChefRvmCookbook
       end
 
       def check_rvm!
-        raise RvmDoesNotInstalled, "Rvm is not installed for user #{user}!" unless rvm?
+        raise RvmDoesNotInstalled, "Rvm is not installed for user #{new_resource.user}!" unless rvm?
       end
 
       alias get rvm_get
