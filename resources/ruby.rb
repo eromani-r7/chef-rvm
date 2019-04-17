@@ -16,7 +16,7 @@ action :install do
     rvm.gemset_create(new_resource.version)
     new_resource.updated_by_last_action(true)
   end
-  rvm.ruby_set_default(new_resource.version) if default
+  rvm.ruby_set_default(new_resource.version) if new_resource.default
 end
 
 %i[remove uninstall reinstall].each do |action_name|
