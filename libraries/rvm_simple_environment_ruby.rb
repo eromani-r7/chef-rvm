@@ -7,10 +7,10 @@ class ChefRvmCookbook
         !rvm(ruby_string.version).error?
       end
 
-      def ruby_install(ruby_string = nil, patch = nil)
+      def ruby_install(ruby_string = nil, patch = nil, user)
         check_rvm!
         Chef::Log.info(ENV['PATH'])
-        ENV['PATH'] = "#{ENV['PATH']}:***REMOVED***"
+        ENV['PATH'] = "#{ENV['PATH']}:/home/#{user}/.rvm/bin"
         Chef::Log.info(ENV['PATH'])
         ruby_string = ruby_string(ruby_string)
         cmd = "install #{ruby_string.version}"
