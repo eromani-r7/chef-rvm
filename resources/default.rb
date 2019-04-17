@@ -4,7 +4,7 @@ end
 
 default_action :install
 
-property :user, String
+property :user, String, name_property: true
 property :rubies, [Hash, Array, String], default: {}
 property :rvmrc, [Hash, NilClass], default: nil
 
