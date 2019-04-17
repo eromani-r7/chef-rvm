@@ -9,6 +9,9 @@ class ChefRvmCookbook
 
       def ruby_install(ruby_string = nil, patch = nil)
         check_rvm!
+        Chef::Log.info(ENV['PATH'])
+        ENV['PATH'] = "#{ENV['PATH']}:***REMOVED***"
+        Chef::Log.info(ENV['PATH'])
         ruby_string = ruby_string(ruby_string)
         cmd = "install #{ruby_string.version}"
         cmd << " --patch #{patch}"
