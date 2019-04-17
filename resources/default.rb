@@ -31,21 +31,21 @@ end
 
 action :upgrade do
   if rvm.rvm?
-    Chef::Log.info "Upgrade RVM for user #{user}"
+    Chef::Log.info "Upgrade RVM for user #{new_resource.user}"
     rvm.rvm_get(:stable)
     updated_by_last_action(true)
   else
-    Chef::Log.info "Rvm is not installed for #{user}"
+    Chef::Log.info "Rvm is not installed for #{new_resource.user}"
   end
 end
 
 action :implode do
   if rvm.rvm?
-    Chef::Log.info "Implode RVM for user #{user}"
+    Chef::Log.info "Implode RVM for user #{new_resource.user}"
     rvm.rvm_implode
     updated_by_last_action(true)
   else
-    Chef::Log.info "Rvm is not installed for #{user}"
+    Chef::Log.info "Rvm is not installed for #{new_resource.user}"
   end
 end
 
