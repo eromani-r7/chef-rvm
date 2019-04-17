@@ -64,7 +64,7 @@ class ChefRvmCookbook
       pkgs = value_for_platform(
         %w[debian ubuntu] => {
           'default' => %w[build-essential openssl libreadline7 libreadline-dev
-                          zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev
+                          zlib1g zlib1g-dev libssl1.0-dev libyaml-dev libsqlite3-dev
                           sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev gawk ncurses-dev
                           automake libtool bison ssl-cert pkg-config libgdbm-dev libffi-dev clang llvm llvm-dev libedit-dev libgmp-dev
                           patch ca-certificates curl libncurses5-dev]
